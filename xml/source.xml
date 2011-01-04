@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- all offers for specified person -->
+<person_accountings>
+	<person>
+		<name>Huber</name>
+	</person>
+	<accountings>
+		<accounting>
+			<offer>Surfing</offer>
+			<date>2009-11-24</date>
+		</accounting>
+	</accountings>
+</person_accountings>
