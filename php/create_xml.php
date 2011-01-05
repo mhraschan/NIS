@@ -39,14 +39,7 @@
 			
 			$xmlcontent .= "</person_accountings>\n";
 			
-			$randval = rand();
-			$xmlfilename = "tmp" . $randval . ".xml";
 			$xslpath = "../xsl/transform.xsl";
-			
-			$file = fopen($xmlfilename, "w");
-			fwrite($file, $xmlcontent);
-			fclose($file);
-			
 			$xsltproc = new XsltProcessor();
 
 			// DOM Dokument initiieren und xsl-datei laden
@@ -56,7 +49,7 @@
 			
 			// DOM initiieren und xml-datei laden
 			$xml_doc = new DomDocument;
-			$xml_doc->load($xmlfilename);
+			$xml_doc->loadXML($xmlcontent);
 			
 			// Transformation
 			if ($html = $xsltproc->transformToXML($xml_doc))
@@ -64,7 +57,6 @@
 			else 
 				echo "XSL Transformation failed.";
 			
-			unlink($xmlfilename);
 		}
 	}
 	else
