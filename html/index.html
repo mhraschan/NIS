@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<title>NIS Homepage</title>
+</head>
+
+<body>
+<h1>PHP Demo and Database Manipulation</h1>
+<p>This Demo takes you through several forms that retrieve information from the database.</p>
+<p><a href="../php/index.php">Start</a></p>
+
+<h1>XML/XSL Demo</h1>
+<p>This Demo retrieves Data from the Database creates XML from it and transforms it to HTML
+using an <a href="../xsl/transform.xsl" content="text/text">XSL-stylesheet</a>.</p>
+<p>You can choose wether to 
+do this transformation on the <strong>server-side</strong> using php or on the 
+<strong>client-side</strong> in the browser.</p>
+
+<form action="../php/create_xml.php" method="get">
+<div>
+<label for="pnr">Person number (p_nr)</label>
+<input type="text" name="pnr" id="pnr" value="1" />
+</div>
+<div>
+<label for="client">Client-side XSL Transformation</label>
+<input type="radio" name="serverclient" id="client" checked="checked" value="client" />
+</div>
+<div style="width: 45em">
+<label for="server">Server-side XSL Transformation</label>
+<input type="radio" name="serverclient" id="server" value="server" />
+</div>
+<div>
+<input type="submit" name="Do it!" />
+</div>
+</form>
+
+</body>
+
+</html>
