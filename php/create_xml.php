@@ -1,9 +1,10 @@
 <?php
-	include_once 'dbconfig.php';
+	require('./Properties.class.php');
 	
 	$pnr = $_GET['pnr'];
+	$prop = new Properties();
+	$db = new mysqli( $prop->db_server, $prop->db_user, $prop->db_password, $prop->db_name );
 	
-	$db = new mysqli( $server, $user, $password, $dbname );
 	
 	if (mysqli_connect_errno() == 0)
 	{
