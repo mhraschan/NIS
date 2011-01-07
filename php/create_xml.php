@@ -23,7 +23,7 @@
 	
 	if ($result->num_rows == 0)
 	{
-		errorhtml( 'Keine Einträge für den User');
+		errorhtml('No entries for that user.');
 		die;
 	}
 	$xslpath = "../xsl/transform.xsl";
