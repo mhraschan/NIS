@@ -34,7 +34,7 @@ class Person
 	}
 	public function delPersByAbID($a_id)
 	{
-		$sql = 'DELETE FROM ' . $this->table_name . ' WHERE p_nr=(SELECT Persons_p_nr FROM Persons_Abilities WHERE Abilities_a_id=' . $a_id . ')';
+		$sql = 'DELETE FROM ' . $this->table_name . ' WHERE p_nr IN (SELECT Persons_p_nr FROM Persons_Abilities WHERE Abilities_a_id=' . $a_id . ')';
 		$qry = new Query();
 		$ret = $qry->initialize($sql);
 	}
