@@ -14,7 +14,6 @@ require_once('./Offers.class.php');
 if ( isset($_GET['list']) )
 {
 	$name = $_POST['a_name'];
-	//print("ausgeben: " . $name);
 	
 	$o = new Offers('Offers');
 	$rs = $o->getOfferByAbName($name);
@@ -36,16 +35,13 @@ if ( isset($_GET['list']) )
 	}
 	print("</table>");
 
+	print('<b>List the offers with their maximum participants for each Ability with at least: </b><br>
+			<form action="showOffers.php?showAll" method="post">
+			<input type="text" name="least" value="" />
+			<b>participants</b><br>
+			<input type="submit" value="Show them!" />
+			</form>');
 }
 ?>
-<b>List the offers with their maximum participants for each Ability with at least: </b><br>
-<form action="showOffers.php?showAll" method="post">
-<input type="text" name="least" value="" />
-<b>participants</b><br>
-<input type="submit" value="Show them!" />
-</form>
-
-
-
 </body>
 </html>

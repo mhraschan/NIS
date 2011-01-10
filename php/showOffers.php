@@ -53,7 +53,5 @@ if ( isset($_GET['showAll']) )
 <input type="submit" value="Update!" />
 </form>
 
-
-
 </body>
 </html>

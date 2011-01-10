@@ -11,7 +11,7 @@ class Offers
 	/*Reihe als Ergebnis der Query*/
 	public $row;
 
-	/*Im Konstruktor wird der Name der Tabelle der Abilities festgelegt*/
+	/*Im Konstruktor wird der Name der Tabelle der Offers festgelegt*/
 	public function __construct($t_name)
 	{
 		$this->table_name = $t_name;
@@ -26,8 +26,6 @@ class Offers
 		if ($ret == 0)
 		{
 			$rs = $qry->getResultSet();
-			//$ability = mysql_fetch_row($rs);
-			//return $ability[0];
 			return $rs;
 		}
 		else
@@ -51,12 +49,11 @@ class Offers
 	
 	public function setMaxByAbID($a_id, $max)
 	{
-		$sql = 'UPDATE Offers SET max_participants=' . $max . ' WHERE o_id IN (SELECT Offers_o_id FROM Offer_Abilities WHERE Abilities_a_id=' . $a_id . ')';
+		$sql = 'UPDATE ' . $this->table-name . ' SET max_participants=' . $max . ' WHERE o_id IN (SELECT Offers_o_id FROM Offer_Abilities WHERE Abilities_a_id=' . $a_id . ')';
 		$qry = new Query();
 		$ret = $qry->initialize($sql);
 	}
 
 }
-
 
 ?>

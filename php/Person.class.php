@@ -1,7 +1,6 @@
-<?php
+ \<?php
 
 require_once('./Query.class.php');
-
 
 class Person
 {
@@ -39,6 +38,5 @@ class Person
 		$ret = $qry->initialize($sql);
 	}
 }
-
 
 ?>

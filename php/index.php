@@ -20,7 +20,7 @@ if ( isset($_GET['list']) )
 	print("<b>Hello, $name</b>");
 	
 	$a = new Abilities('Abilities');
-	$rs = $a->getAbsByPersID($name);
+	$rs = $a->getAbsByPersName($name);
 
 	print("<br><b>Abilities for person $name: </b>");
 	print("<ul>");
@@ -46,12 +46,7 @@ else
 			<input type="submit" value="List Name and Abilities" />
 			</form>');
 }
-
-
 ?>
-
-
-
 
 </body>
 </html>
