@@ -139,7 +139,12 @@ also only shows the entities with at least \textit{least} participants (demonstr
 The last file 'dataManipulation.php' shows two data-manipulation statements: UPDATE and DELETE. First the passed GET-parameter 
 \textit{setMax} will set the \textit{$max\_participants$} of all Offers with a specific ability-ID to the new value. \newline
 The other option is that \textit{del} is passed as the GET-parameter and therefore the person with the specific ability-ID is going to 
-be deleted. 
+be deleted. Here an integrity check has to be made. So all entries in \textit{Persons_Abilities} for all persons with the proper 
+ability will also be deleted and all entries in \textit{Accountings} with the specific value of \textit{Persons_p_nr}.
+
+The integrity check should be made, to control that there are no entities in other tables referencing to a deleted value. In our case 
+we don't have any foreign key dependencies except those at \textit{Accountings} and \textit{Persons_Abilities} so we only have to 
+take care about this at the deleting opterations, not at our inserting and updating examples.
 
 \lstinputlisting[caption={dataManipulation.php}]{../php/dataManipulation.php}
  

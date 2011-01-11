@@ -49,7 +49,7 @@ class Offers
 	
 	public function setMaxByAbID($a_id, $max)
 	{
-		$sql = 'UPDATE ' . $this->table-name . ' SET max_participants=' . $max . ' WHERE o_id IN (SELECT Offers_o_id FROM Offer_Abilities WHERE Abilities_a_id=' . $a_id . ')';
+		$sql = 'UPDATE ' . $this->table_name . ' SET max_participants=' . $max . ' WHERE o_id IN (SELECT Offers_o_id FROM Offer_Abilities WHERE Abilities_a_id=' . $a_id . ')';
 		$qry = new Query();
 		$ret = $qry->initialize($sql);
 	}
