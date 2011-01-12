@@ -42,7 +42,7 @@ if ( isset($_GET['setMax']) )
 	}
 	print("</table>");
 	
-	print('<b>Delete Person mit Ability : </b><br>
+	print('<b>Delete Persons with p_nr: </b><br>
 			<form action="dataManipulation.php?del" method="post">
 			<input type="text" name="a_id" value="" />
 			<input type="submit" value="Delete!" />
@@ -54,7 +54,7 @@ else if ( isset($_GET['del']) )
 	$a_id = $_POST['a_id'];
 	
 	$p = new Person('Persons');
-	$p->delPersByAbID($a_id);
+	$p->delPersByID($a_id);
 }
 ?>
 

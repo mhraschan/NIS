@@ -31,20 +31,19 @@ class Person
 		else
 			return -1;
 	}
-	public function delPersByAbID($a_id)
+	public function delPersByID($a_id)
 	{
 		$qry = new Query();
 
-		$sql = 'DELETE FROM ' . $this->table_name . ' WHERE p_nr IN (SELECT Persons_p_nr FROM Persons_Abilities WHERE Abilities_a_id=' . $a_id . ')';
+		$sql = 'DELETE FROM Persons WHERE p_nr =' . $a_id;
 		$ret = $qry->initialize($sql);
-		
-		//Integrity Check for Person with Abilities: $a_id		
-		$icheck0 = 'DELETE FROM Persons_Abilities WHERE Abilities_a_id = ' . $a_id;
-		$ret = $qry->initialize($icheck0);
 
-        $icheck1 = 'DELETE FROM Accountings WHERE Persons_p_nr IN (SELECT p_nr FROM Persons WHERE p_nr IN(SELECT Persons_p_nr FROM 							Persons_Abilities WHERE Abilities_a_id=' . $a_id . '))';
+		//Check foreign key integrity in Accountings
+        $icheck1 = 'DELETE FROM Accountings WHERE Persons_p_nr =' . $a_id ;
 		$ret = $qry->initialize($icheck1);
-
+		//Check foreign key integrity in Abilities
+		$icheck0 = 'DELETE FROM Persons_Abilities WHERE Persons_p_nr =' . $a_id; 
+		$ret = $qry->initialize($icheck0);
 	}
 }
 
