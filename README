@@ -1,0 +1,4 @@
+html/index.html is the start page.
+database/* contains the sql commands to create the tables and insert values.
+xsl/
+php/
