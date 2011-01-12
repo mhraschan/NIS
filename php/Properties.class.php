@@ -19,7 +19,7 @@ class Properties
 	{
 		$this->db_server = 'localhost';
 		$this->db_name = 'nis';
-		$this->db_user = 'root';
+		$this->db_user = 'nis';
 		$this->db_password = '';
 	}
 }

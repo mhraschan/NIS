@@ -3,9 +3,9 @@
 
 -- First create database and grant privileges as root like:
 -- CREATE DATABASE dbase1;
--- GRANT ALL PRIVILEGES ON dbase1.* to 'abgabe';
+-- GRANT ALL PRIVILEGES ON nis.* to 'abgabe';
 -- after that, all sql files can be executed like this:
--- mysql -u abgabe dbase1 < tables.sql
+-- mysql -u abgabe nis < tables.sql
 -- Definition of the database schema
 
 CREATE TABLE Offers (
